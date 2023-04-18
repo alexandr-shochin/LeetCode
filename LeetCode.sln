@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{991FFB
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.Concurrency", "src\LeetCode.Concurrency\LeetCode.Concurrency.csproj", "{C10072DE-D974-4DE0-B452-14AB74D6BA23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +41,14 @@ Global
 		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C10072DE-D974-4DE0-B452-14AB74D6BA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C10072DE-D974-4DE0-B452-14AB74D6BA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C10072DE-D974-4DE0-B452-14AB74D6BA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C10072DE-D974-4DE0-B452-14AB74D6BA23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FDD3093A-501A-4352-BB16-61CEA1736658} = {F0212501-2A72-44F9-9BBE-2F6D90FEE58A}
 		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856} = {5405CF89-5A1A-42CE-B94D-BCAA69598846}
+		{C10072DE-D974-4DE0-B452-14AB74D6BA23} = {F0212501-2A72-44F9-9BBE-2F6D90FEE58A}
 	EndGlobalSection
 EndGlobal
