@@ -1,6 +1,4 @@
-﻿using LeetCode.Algorithms.Easy;
-
-namespace LeetCode.UnitTests.Algorithms.Easy;
+﻿namespace LeetCode.UnitTests.Algorithms.Easy;
 
 public sealed class PalindromeNumberSolutionTests
 {

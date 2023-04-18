@@ -1,6 +1,4 @@
-﻿using LeetCode.Algorithms.Medium;
-
-namespace LeetCode.UnitTests.Algorithms.Medium;
+﻿namespace LeetCode.UnitTests.Algorithms.Medium;
 
 public sealed class AddTwoNumbersSolutionTests
 {

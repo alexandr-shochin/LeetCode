@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace LeetCode.Algorithms.Easy;
+﻿namespace LeetCode.Algorithms.Easy;
 
 public sealed class LongestCommonPrefixSolution
 {
