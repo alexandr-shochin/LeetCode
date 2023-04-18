@@ -13,7 +13,7 @@ public sealed class PrintInOrderSolutionTests
     public void Given_some_set_of_input_parameters_When_call_RomanToInt_Then_should_return_correct_solutions()
     {
         // Arrange
-        const int ExperimentCount = 10;
+        const int ExperimentCount = 100;
         const string ExpectedSolution = "firstsecondthird";
         
         // Act and Assert
@@ -30,7 +30,7 @@ public sealed class PrintInOrderSolutionTests
             };
             
             Parallel.ForEach(threads, thread => thread.Start());
-            Thread.Sleep(1 * 1000);
+            alg.ThirdManualResetEventSlim.Wait();
         
             actualSolution.Should().Be(ExpectedSolution);
             _testOutputHelper.WriteLine($"experimentNumber: {experimentNumber} OK!");

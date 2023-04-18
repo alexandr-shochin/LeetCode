@@ -6,10 +6,8 @@ public sealed class PrintInOrderSolution
 {
     private readonly ManualResetEventSlim _firstManualResetEventSlim = new(false);
     private readonly ManualResetEventSlim _secondManualResetEventSlim = new(false);
-    
-    public PrintInOrderSolution()
-    {
-    }
+
+    public ManualResetEventSlim ThirdManualResetEventSlim { get; } = new(false);
 
     public void First(Action printFirst)
     {
@@ -32,5 +30,7 @@ public sealed class PrintInOrderSolution
         _secondManualResetEventSlim.Wait();
 
         printThird();
+        
+        ThirdManualResetEventSlim.Set();
     }
 }
