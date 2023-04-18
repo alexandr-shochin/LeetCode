@@ -1,0 +1,15 @@
+﻿namespace LeetCode.Algorithms.Easy;
+
+public sealed class PalindromeNumberSolution
+{
+    public bool IsPalindrome(int x)
+    {
+        var chars = x.ToString();
+        
+        for (var charIndex = 0; charIndex < chars.Length - 1; charIndex++)
+            if (chars[charIndex] != chars[chars.Length - 1 - charIndex])
+                return false;
+
+        return true;
+    }
+}

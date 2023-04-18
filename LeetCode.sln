@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F0212501-2A72-44F9-9BBE-2F6D90FEE58A}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+		src\Directory.Build.targets = src\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5405CF89-5A1A-42CE-B94D-BCAA69598846}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Directory.Build.props = tests\Directory.Build.props
+		tests\Directory.Build.targets = tests\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.Algorithms", "src\LeetCode.Algorithms\LeetCode.Algorithms.csproj", "{FDD3093A-501A-4352-BB16-61CEA1736658}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.UnitTests", "tests\LeetCode.UnitTests\LeetCode.UnitTests.csproj", "{CAA20089-E5F2-4F4D-A88E-68F8A0F41856}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{991FFBE6-A4AD-4DA4-ADDE-F427CBD7CCE5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		global.json = global.json
+		NuGet.config = NuGet.config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDD3093A-501A-4352-BB16-61CEA1736658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD3093A-501A-4352-BB16-61CEA1736658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD3093A-501A-4352-BB16-61CEA1736658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD3093A-501A-4352-BB16-61CEA1736658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FDD3093A-501A-4352-BB16-61CEA1736658} = {F0212501-2A72-44F9-9BBE-2F6D90FEE58A}
+		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856} = {5405CF89-5A1A-42CE-B94D-BCAA69598846}
+	EndGlobalSection
+EndGlobal
