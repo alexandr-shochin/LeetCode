@@ -1,5 +1,7 @@
 ﻿namespace LeetCode.Algorithms.Easy;
 
+/// <summary>9. Palindrome Number</summary>
+/// <remarks>https://leetcode.com/problems/palindrome-number/</remarks>>
 public sealed class PalindromeNumberSolution
 {
     public bool IsPalindrome(int x)

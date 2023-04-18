@@ -1,5 +1,7 @@
 ﻿namespace LeetCode.Algorithms.Easy;
 
+/// <summary>1. Two Sum</summary>
+/// <remarks>https://leetcode.com/problems/two-sum/</remarks>>
 public sealed class TwoSumSolution
 {
     public int[] TwoSum(int[] nums, int target)

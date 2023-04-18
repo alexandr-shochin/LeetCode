@@ -7,7 +7,7 @@ public sealed class Decoder
         if (string.IsNullOrEmpty(inputStr))
             return string.Empty;
         
-        Stack<string> stack = new();
+        var stack = new Stack<string>();
         
         foreach (var inputSymbol in inputStr)
         {
@@ -41,7 +41,7 @@ public sealed class Decoder
         return result;
     }
 
-    private static string MultiplyStr(string inputStr)
+    private string MultiplyStr(string inputStr)
     {
         var result = string.Empty;
         
@@ -54,5 +54,5 @@ public sealed class Decoder
         return result;
     }
 
-    private static bool IsDigit(string str) => int.TryParse(str, out _);
+    private bool IsDigit(string str) => int.TryParse(str, out _);
 }

@@ -38,12 +38,12 @@ public sealed class AddTwoNumbersSolutionTests
 
     private int[] GetDigits(ListNode listNode)
     {
-        var digits = new List<int> { listNode.val };
+        var digits = new List<int> { listNode.Val };
 
         var root = listNode;
-        while (root.next is { } next)
+        while (root.Next is { } next)
         {
-            digits.Add(next.val);
+            digits.Add(next.Val);
             root = next;
         }
 
