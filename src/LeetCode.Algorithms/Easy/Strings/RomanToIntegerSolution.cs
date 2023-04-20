@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy;
+﻿namespace LeetCode.Algorithms.Easy.Strings;
 
 /// <summary>13. Roman to Integer</summary>
 /// <remarks>https://leetcode.com/problems/roman-to-integer/</remarks>>

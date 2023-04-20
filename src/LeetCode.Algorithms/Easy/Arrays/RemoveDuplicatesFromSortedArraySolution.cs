@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy;
+﻿namespace LeetCode.Algorithms.Easy.Arrays;
 
 /// <summary>26. Remove Duplicates from Sorted Array</summary>
 /// <remarks>https://leetcode.com/problems/remove-duplicates-from-sorted-array/</remarks>

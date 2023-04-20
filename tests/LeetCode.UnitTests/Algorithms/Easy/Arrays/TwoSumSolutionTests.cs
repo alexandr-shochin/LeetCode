@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy;
+﻿namespace LeetCode.UnitTests.Algorithms.Easy.Arrays;
 
 public sealed class TwoSumSolutionTests
 {

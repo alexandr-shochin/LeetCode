@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy;
+﻿namespace LeetCode.Algorithms.Easy.Strings;
 
 /// <summary>9. Palindrome Number</summary>
 /// <remarks>https://leetcode.com/problems/palindrome-number/</remarks>>

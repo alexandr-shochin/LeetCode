@@ -1,7 +1,4 @@
-﻿using LeetCode.Concurrency.Easy;
-using Xunit.Abstractions;
-
-namespace LeetCode.UnitTests.Concurrency.Easy;
+﻿namespace LeetCode.UnitTests.Concurrency.Easy;
 
 public sealed class PrintInOrderSolutionTests
 {

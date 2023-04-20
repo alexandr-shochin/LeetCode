@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy;
+﻿namespace LeetCode.UnitTests.Algorithms.Easy.Strings;
 
 public sealed class LongestCommonPrefixSolutionTests
 {

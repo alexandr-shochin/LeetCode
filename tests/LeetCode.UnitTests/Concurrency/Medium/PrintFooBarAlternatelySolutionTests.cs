@@ -1,8 +1,4 @@
-﻿using LeetCode.Concurrency.Easy;
-using LeetCode.Concurrency.Medium;
-using Xunit.Abstractions;
-
-namespace LeetCode.UnitTests.Concurrency.Medium;
+﻿namespace LeetCode.UnitTests.Concurrency.Medium;
 
 public sealed class PrintFooBarAlternatelySolutionTests
 {

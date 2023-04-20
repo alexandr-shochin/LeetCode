@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy;
+﻿namespace LeetCode.Algorithms.Easy.Arrays;
 
 /// <summary>1. Two Sum</summary>
 /// <remarks>https://leetcode.com/problems/two-sum/</remarks>>

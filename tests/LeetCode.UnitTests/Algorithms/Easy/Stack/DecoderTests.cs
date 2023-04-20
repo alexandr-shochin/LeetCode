@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms;
+﻿namespace LeetCode.UnitTests.Algorithms.Easy.Stack;
 
 public sealed class DecoderTests
 {

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy;
+﻿namespace LeetCode.Algorithms.Easy.Arrays;
 
 /// <summary>27. Remove Element</summary>
 /// <remarks>https://leetcode.com/problems/remove-element/</remarks>

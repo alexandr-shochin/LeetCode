@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy;
+﻿namespace LeetCode.Algorithms.Easy.Stack;
 
 /// <summary>20. Valid Parentheses</summary>
 /// <remarks>https://leetcode.com/problems/valid-parentheses/</remarks>

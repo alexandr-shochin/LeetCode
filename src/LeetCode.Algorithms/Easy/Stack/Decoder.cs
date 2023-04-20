@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms;
+﻿namespace LeetCode.Algorithms.Easy.Stack;
 
 public sealed class Decoder
 {
