@@ -3,7 +3,7 @@
 public sealed class MaximumDepthOfBinaryTreeSolutionTests
 {
     [Fact]
-    public void Given_some_set_of_input_parameters_When_call_RomanToInt_Then_should_return_correct_solutions()
+    public void Given_some_set_of_input_parameters_When_call_MaxDepth_Then_should_return_correct_solutions()
     {
         // Arrange
         var alg = new MaximumDepthOfBinaryTreeSolution();
