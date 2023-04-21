@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Medium;
+﻿namespace LeetCode.UnitTests.Algorithms.Medium.LinkedList;
 
 public sealed class AddTwoNumbersSolutionTests
 {
