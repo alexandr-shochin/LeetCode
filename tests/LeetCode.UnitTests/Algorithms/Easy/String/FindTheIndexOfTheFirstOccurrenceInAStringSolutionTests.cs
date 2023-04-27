@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.Strings;
+﻿namespace LeetCode.UnitTests.Algorithms.Easy.String;
 
 public sealed class FindTheIndexOfTheFirstOccurrenceInAStringSolutionTests
 {

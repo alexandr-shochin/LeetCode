@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.Strings;
+﻿namespace LeetCode.Algorithms.Easy.String;
 
 /// <summary>14. Longest Common Prefix</summary>
 /// <remarks>https://leetcode.com/problems/longest-common-prefix/</remarks>>

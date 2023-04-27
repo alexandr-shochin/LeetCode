@@ -3,7 +3,7 @@
 global using FluentAssertions;
 global using LeetCode.Algorithms.Easy.Arrays;
 global using LeetCode.Algorithms.Easy.Stack;
-global using LeetCode.Algorithms.Easy.Strings;
+global using LeetCode.Algorithms.Easy.String;
 global using LeetCode.Algorithms.Easy.Tree;
 global using LeetCode.Algorithms.Medium.LinkedList;
 global using LeetCode.Concurrency.Easy;
