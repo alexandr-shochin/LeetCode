@@ -1,10 +1,10 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Medium.LinkedList;
+﻿namespace LeetCode.UnitTests.Algorithms;
 
 public static class LinkedListUtils
 {
-    public static ListNode? GetList(int[] listNodes)
+    public static ListNode? GetList(int[]? listNodes)
     {
-        if (listNodes is { Length: 0 })
+        if (listNodes is null or { Length: 0 })
             return null;
         
         var currentNode = new ListNode(listNodes[listNodes.Length - 1]);

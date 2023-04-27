@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Medium.LinkedList;
+﻿namespace LeetCode.Algorithms;
 
 public sealed class ListNode 
 {

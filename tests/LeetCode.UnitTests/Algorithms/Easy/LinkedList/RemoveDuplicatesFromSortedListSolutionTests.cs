@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Medium.LinkedList;
+﻿namespace LeetCode.UnitTests.Algorithms.Easy.LinkedList;
 
 public sealed class RemoveDuplicatesFromSortedListSolutionTests
 {

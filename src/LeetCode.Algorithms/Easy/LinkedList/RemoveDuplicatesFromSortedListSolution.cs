@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Medium.LinkedList;
+﻿namespace LeetCode.Algorithms.Easy.LinkedList;
 
 /// <summary>83. Remove Duplicates from Sorted List</summary>
 /// <remarks>https://leetcode.com/problems/remove-duplicates-from-sorted-list</remarks>

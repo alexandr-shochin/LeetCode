@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.Tree;
+﻿namespace LeetCode.Algorithms;
 
 public class TreeNode
 {
