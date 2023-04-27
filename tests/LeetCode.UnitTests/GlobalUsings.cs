@@ -2,6 +2,7 @@
 
 global using FluentAssertions;
 global using LeetCode.Algorithms.Easy.Arrays;
+global using LeetCode.Algorithms.Easy.Math;
 global using LeetCode.Algorithms.Easy.Stack;
 global using LeetCode.Algorithms.Easy.String;
 global using LeetCode.Algorithms.Easy.Tree;

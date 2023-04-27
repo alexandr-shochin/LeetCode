@@ -14,39 +14,13 @@ public sealed class AddTwoNumbersSolutionTests
     {
         // Arrange
         var alg = new AddTwoNumbersSolution();
-        var firstListNode = GetList(l1);
-        var secondListNode = GetList(l2);
+        var firstListNode = LinkedListUtils.GetList(l1);
+        var secondListNode = LinkedListUtils.GetList(l2);
 
         // Act
         var actualSolution = alg.AddTwoNumbers(firstListNode, secondListNode);
 
         // Assert
-        GetDigits(actualSolution).Should().BeEquivalentTo(expectedSolution);
-    }
-
-    private ListNode GetList(int[] listNode)
-    {
-        var currentNode = new ListNode(listNode[listNode.Length - 1]);
-        for (var i = listNode.Length - 2; i >= 0 ; i--)
-        {
-            var newNode  = new ListNode(listNode[i], currentNode);
-            currentNode = newNode;
-        }
-
-        return currentNode;
-    }
-
-    private int[] GetDigits(ListNode listNode)
-    {
-        var digits = new List<int> { listNode.Val };
-
-        var root = listNode;
-        while (root.Next is { } next)
-        {
-            digits.Add(next.Val);
-            root = next;
-        }
-
-        return digits.ToArray();
+        LinkedListUtils.GetDigits(actualSolution).Should().BeEquivalentTo(expectedSolution);
     }
 }
