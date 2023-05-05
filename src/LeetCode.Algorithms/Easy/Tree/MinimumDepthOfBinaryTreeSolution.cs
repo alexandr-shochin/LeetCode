@@ -35,11 +35,11 @@ public sealed class MinimumDepthOfBinaryTreeSolution
 
     private void AddAdjacentNodes(TreeNode node, int depth)
     {
-        AddNodeToStack(node.left, depth);
-        AddNodeToStack(node.right, depth);
+        AddNodeToQueue(node.left, depth);
+        AddNodeToQueue(node.right, depth);
     }
 
-    private void AddNodeToStack(TreeNode? node, int prevDepth)
+    private void AddNodeToQueue(TreeNode? node, int prevDepth)
     {
         if (node is null)
             return;

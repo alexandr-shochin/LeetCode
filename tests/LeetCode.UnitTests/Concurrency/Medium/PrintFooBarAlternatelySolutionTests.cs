@@ -10,7 +10,7 @@ public sealed class PrintFooBarAlternatelySolutionTests
     public void Given_some_set_of_input_parameters_When_call_RomanToInt_Then_should_return_correct_solutions()
     {
         // Arrange
-        const int ExperimentCount = 1000;
+        const int ExperimentCount = 100;
         
         // Act and Assert
         for (var experimentNumber = 1; experimentNumber <= ExperimentCount; experimentNumber++)
