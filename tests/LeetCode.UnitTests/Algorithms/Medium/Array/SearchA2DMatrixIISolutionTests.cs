@@ -1,10 +1,10 @@
 ﻿namespace LeetCode.UnitTests.Algorithms.Medium.Array;
 
-public sealed class SearchA2DMatrixIISolutionTest
+public sealed class SearchA2DMatrixIISolutionTests
 {
     private readonly int[][] _matrix;
 
-    public SearchA2DMatrixIISolutionTest()
+    public SearchA2DMatrixIISolutionTests()
     {
         _matrix = new int[5][];
         _matrix[0] = new[] { 1, 4, 7, 11, 15 };
