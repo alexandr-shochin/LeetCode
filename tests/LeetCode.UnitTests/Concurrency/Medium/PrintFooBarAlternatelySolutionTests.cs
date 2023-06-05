@@ -7,7 +7,7 @@ public sealed class PrintFooBarAlternatelySolutionTests
     public PrintFooBarAlternatelySolutionTests(ITestOutputHelper testOutputHelper) => _testOutputHelper = testOutputHelper;
 
     [Fact]
-    public void Given_some_set_of_input_parameters_When_call_RomanToInt_Then_should_return_correct_solutions()
+    public void Given_some_set_of_input_parameters_When_call_Bar_and_Foo_Then_should_return_correct_solutions()
     {
         // Arrange
         const int ExperimentCount = 100;

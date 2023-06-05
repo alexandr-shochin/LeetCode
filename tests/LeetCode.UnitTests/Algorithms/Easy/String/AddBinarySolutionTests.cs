@@ -6,7 +6,7 @@ public sealed class AddBinarySolutionTests
     [InlineData("11", "1", "100")]
     [InlineData("11", "11", "110")]
     [InlineData("1010", "1011", "10101")]
-    public void Given_some_set_of_input_parameters_When_call_TwoSum_Then_should_return_correct_solutions(string a, string b, string expectedSolution)
+    public void Given_some_set_of_input_parameters_When_call_AddBinary_Then_should_return_correct_solutions(string a, string b, string expectedSolution)
     {
         // Arrange
         var alg = new AddBinarySolution();

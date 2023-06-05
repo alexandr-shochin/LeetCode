@@ -9,7 +9,7 @@ public sealed class MergeTwoSortedListsSolutionTests
     [InlineData(new[] { 0 }, null!, new[] { 0 })]
     [InlineData(new[] { 2 }, new[] { 1 }, new[] { 1, 2 })]
     [InlineData(new[] { -10, -10, -9, -4, 1, 6, 6 }, new[] { -7 }, new[] { -10, -10, -9, -7, -4, 1, 6, 6 })]
-    public void Given_some_set_of_input_parameters_When_call_AddTwoNumbers_Then_should_return_correct_solutions(int[]? l1, int[]? l2, int[] expectedSolution)
+    public void Given_some_set_of_input_parameters_When_call_MergeTwoLists_Then_should_return_correct_solutions(int[]? l1, int[]? l2, int[] expectedSolution)
     {
         // Arrange
         var alg = new MergeTwoSortedListsSolution();

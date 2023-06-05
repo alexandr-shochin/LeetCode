@@ -11,7 +11,7 @@ public sealed class FindTheIndexOfTheFirstOccurrenceInAStringSolutionTests
     [InlineData("mississippi", "issip", 4)]
     [InlineData("aaa", "aaaa", -1)]
     [InlineData("mississippi", "issipi", -1)]
-    public void Given_some_set_of_input_parameters_When_call_IsValid_Then_should_return_correct_solutions(string haystack, string needle, int expectedSolution)
+    public void Given_some_set_of_input_parameters_When_call_StrStr_Then_should_return_correct_solutions(string haystack, string needle, int expectedSolution)
     {
         // Arrange
         var alg = new FindTheIndexOfTheFirstOccurrenceInAStringSolution();

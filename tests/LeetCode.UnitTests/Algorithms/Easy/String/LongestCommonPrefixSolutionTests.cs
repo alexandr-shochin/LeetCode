@@ -8,7 +8,7 @@ public sealed class LongestCommonPrefixSolutionTests
     [InlineData(new[] { "dog","racecar","car" }, "")]
     [InlineData(new[] { "", "racecar","car" }, "")]
     [InlineData(new[] { "vfbdsfdfa" }, "vfbdsfdfa")]
-    public void Given_some_set_of_input_parameters_When_call_RomanToInt_Then_should_return_correct_solutions(string[] strings, string expectedSolution)
+    public void Given_some_set_of_input_parameters_When_call_LongestCommonPrefix_Then_should_return_correct_solutions(string[] strings, string expectedSolution)
     {
         // Arrange
         var alg = new LongestCommonPrefixSolution();
