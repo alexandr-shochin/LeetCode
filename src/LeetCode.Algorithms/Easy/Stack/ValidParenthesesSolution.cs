@@ -9,27 +9,37 @@ public sealed class ValidParenthesesSolution
         var stack = new Stack<char>();
         foreach (var ch in s)
         {
-            if (ch is '(' or '{' or '[')
-                stack.Push(ch);
-            else
-            {
-                if (stack is { Count: 0 })
-                    return false;
+            var isOpeningBrackets = IsOpeningBrackets(ch);
+            var isClosingBrackets = IsClosingBrackets(ch);
+            
+            if(!(isOpeningBrackets || isClosingBrackets))
+                continue;
 
-                var peekedChar = stack.Peek();
-                switch (ch)
-                {
-                    case ')' when peekedChar is not '(':
-                    case '}' when peekedChar is not '{':
-                    case ']' when peekedChar is not '[':
-                        return false;
-                    default:
-                        stack.Pop();
-                        continue;
-                }
+            if (isOpeningBrackets)
+            {
+                stack.Push(ch);
+                continue;
+            }
+
+            if (stack is { Count: 0 })
+                return false;
+
+            var peekedChar = stack.Peek();
+            switch (ch)
+            {
+                case ')' when peekedChar is not '(':
+                case '}' when peekedChar is not '{':
+                case ']' when peekedChar is not '[':
+                    return false;
+                default:
+                    stack.Pop();
+                    continue;
             }
         }
 
         return stack.Count == 0;
     }
+
+    private static bool IsOpeningBrackets(char ch) => ch is '(' or '{' or '[';
+    private static bool IsClosingBrackets(char ch) => ch is ')' or '}' or ']';
 }
