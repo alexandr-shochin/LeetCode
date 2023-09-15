@@ -9,13 +9,13 @@ public sealed class ValidParenthesesSolution
         var stack = new Stack<char>();
         foreach (var ch in s)
         {
-            var isOpeningBrackets = IsOpeningBrackets(ch);
-            var isClosingBrackets = IsClosingBrackets(ch);
+            var isOpeningBracket = IsOpeningBracket(ch);
+            var isClosingBracket = IsClosingBracket(ch);
             
-            if(!(isOpeningBrackets || isClosingBrackets))
+            if(!(isOpeningBracket || isClosingBracket))
                 continue;
 
-            if (isOpeningBrackets)
+            if (isOpeningBracket)
             {
                 stack.Push(ch);
                 continue;
@@ -37,9 +37,9 @@ public sealed class ValidParenthesesSolution
             }
         }
 
-        return stack.Count == 0;
+        return stack.Count is 0;
     }
 
-    private static bool IsOpeningBrackets(char ch) => ch is '(' or '{' or '[';
-    private static bool IsClosingBrackets(char ch) => ch is ')' or '}' or ']';
+    private static bool IsOpeningBracket(char ch) => ch is '(' or '{' or '[';
+    private static bool IsClosingBracket(char ch) => ch is ')' or '}' or ']';
 }
