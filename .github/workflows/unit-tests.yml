@@ -6,7 +6,7 @@ on:
     branches: [ main ]
     paths:
     - '**.cs'
-    - '**.csproj'
+    - '**.UnitTests.csproj'
 
 env:
   DOTNET_VERSION: '8.0.100'
