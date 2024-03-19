@@ -27,6 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{991FFB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.Concurrency", "src\LeetCode.Concurrency\LeetCode.Concurrency.csproj", "{C10072DE-D974-4DE0-B452-14AB74D6BA23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{D1666D60-A6F0-48F0-A6A9-89FE5DDB6DB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{99B74AED-B71B-47D8-8245-6F82F3ADBC55}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-validation.yml = .github\workflows\build-validation.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,5 +57,6 @@ Global
 		{FDD3093A-501A-4352-BB16-61CEA1736658} = {F0212501-2A72-44F9-9BBE-2F6D90FEE58A}
 		{CAA20089-E5F2-4F4D-A88E-68F8A0F41856} = {5405CF89-5A1A-42CE-B94D-BCAA69598846}
 		{C10072DE-D974-4DE0-B452-14AB74D6BA23} = {F0212501-2A72-44F9-9BBE-2F6D90FEE58A}
+		{99B74AED-B71B-47D8-8245-6F82F3ADBC55} = {D1666D60-A6F0-48F0-A6A9-89FE5DDB6DB5}
 	EndGlobalSection
 EndGlobal
