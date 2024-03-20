@@ -1,0 +1,32 @@
+name: unit tests workflow
+
+on:
+  workflow_run:
+    workflows: [build workflow]
+    types:
+      - completed
+
+env:
+  DOTNET_VERSION: '8.0.100'
+
+jobs:
+  unit-tests:
+
+    name: unit-tests-${{matrix.os}}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install dependencies
+        run: dotnet restore
+        
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
