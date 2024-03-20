@@ -2,7 +2,7 @@ name: unit tests workflow
 
 on:
   workflow_run:
-    workflows: [build workflow]
+    workflows: [ build workflow ]
     types:
       - completed
 
@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ ubuntu-latest, windows-latest, macOS-latest ]
 
     steps:
       - uses: actions/checkout@v3
@@ -27,6 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: dotnet restore
-        
+
       - name: Test
         run: dotnet test --no-restore --verbosity normal
