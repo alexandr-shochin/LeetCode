@@ -2,7 +2,7 @@
 
 public sealed class Decoder
 {
-    public string Decode(string inputStr)
+    public string Decode(string? inputStr)
     {
         if (string.IsNullOrEmpty(inputStr))
             return string.Empty;

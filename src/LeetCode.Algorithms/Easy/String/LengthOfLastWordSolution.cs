@@ -4,7 +4,7 @@
 /// <remarks>https://leetcode.com/problems/length-of-last-word/</remarks>
 public sealed class LengthOfLastWordSolution
 {
-    public int LengthOfLastWord(string s)
+    public int LengthOfLastWord(string? s)
     {
         if (string.IsNullOrWhiteSpace(s))
             return 0;

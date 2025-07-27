@@ -1,7 +1,4 @@
-﻿// Global using directives
-
-global using Bogus;
-global using FluentAssertions;
+﻿global using FluentAssertions;
 global using LeetCode.Algorithms;
 global using LeetCode.Algorithms.Easy.Arrays;
 global using LeetCode.Algorithms.Easy.LinkedList;

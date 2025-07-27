@@ -10,7 +10,7 @@ public sealed class LengthOfLastWordSolutionTests
     [InlineData(null, 0)]
     [InlineData(" ", 0)]
     [InlineData("a", 1)]
-    public void Given_some_set_of_input_parameters_When_call_LengthOfLastWord_Then_should_return_correct_solutions(string s, int expectedSolution)
+    public void Given_some_set_of_input_parameters_When_call_LengthOfLastWord_Then_should_return_correct_solutions(string? s, int expectedSolution)
     {
         // Arrange
         var alg = new LengthOfLastWordSolution();
