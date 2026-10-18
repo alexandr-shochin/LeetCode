@@ -4,48 +4,28 @@
 /// <remarks>https://leetcode.com/problems/minimum-depth-of-binary-tree/</remarks>>
 public sealed class MinimumDepthOfBinaryTreeSolution
 {
-    private readonly Queue<(TreeNode, int)> _queue = new();
-    private int _minDepth = int.MaxValue;
-    
     public int MinDepth(TreeNode? root)
     {
         if (root is null)
             return 0;
 
-        if (root.left is null && root.right is null)
-            return 1;
+        var queue = new Queue<(TreeNode node, int depth)>();
+        queue.Enqueue((root, 1));
 
-        AddAdjacentNodes(root, 1);
-
-        while (_queue is not { Count: 0 })
+        while (queue is not { Count: 0 })
         {
-            var (currentNode, depth) = _queue.Dequeue();
+            var (currentNode, depth) = queue.Dequeue();
 
-            if (IsLeaf(currentNode))
-            {
-                _minDepth = depth;
-                break;
-            }
+            if (currentNode.left is null && currentNode.right is null)
+                return depth;
 
-            AddAdjacentNodes(currentNode, depth);
+            if (currentNode.left is not null)
+                queue.Enqueue((currentNode.left, depth + 1));
+
+            if (currentNode.right is not null)
+                queue.Enqueue((currentNode.right, depth + 1));
         }
 
-        return _minDepth;
+        return 0;
     }
-
-    private void AddAdjacentNodes(TreeNode node, int depth)
-    {
-        AddNodeToQueue(node.left, depth);
-        AddNodeToQueue(node.right, depth);
-    }
-
-    private void AddNodeToQueue(TreeNode? node, int prevDepth)
-    {
-        if (node is null)
-            return;
-        
-        _queue.Enqueue((node, prevDepth + 1));
-    }
-
-    private bool IsLeaf(TreeNode node) => node.left is null && node.right is null;
 }

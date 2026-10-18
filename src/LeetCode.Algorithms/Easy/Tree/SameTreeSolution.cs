@@ -4,43 +4,25 @@
 /// <remarks>https://leetcode.com/problems/same-tree/</remarks>
 public sealed class SameTreeSolution
 {
-    private readonly Queue<TreeNode> _queue = new();
-    
     public bool IsSameTree(TreeNode? p, TreeNode? q)
     {
-        if (!IsEqual(p, q))
-            return false;
-        
-        AddNodeToQueue(p?.left);
-        AddNodeToQueue(q?.left);
-        AddNodeToQueue(p?.right);
-        AddNodeToQueue(q?.right);
+        var queue = new Queue<(TreeNode? first, TreeNode? second)>();
+        queue.Enqueue((p, q));
 
-        while (_queue is not { Count: 0 })
+        while (queue is not { Count: 0 })
         {
-            var currentPNode = _queue.Dequeue();
-            var currentQNode = _queue.Dequeue();
-            
-            if (!IsEqual(currentPNode, currentQNode))
+            var (first, second) = queue.Dequeue();
+
+            if (first is null && second is null)
+                continue;
+
+            if (first is null || second is null || first.val != second.val)
                 return false;
-            
-            AddNodeToQueue(currentPNode.left);
-            AddNodeToQueue(currentQNode.left);
-            AddNodeToQueue(currentPNode.right);
-            AddNodeToQueue(currentQNode.right);
+
+            queue.Enqueue((first.left, second.left));
+            queue.Enqueue((first.right, second.right));
         }
 
         return true;
-    }
-
-    private static bool IsEqual(TreeNode? x, TreeNode? y) =>
-        x?.val == y?.val &&
-        x?.left?.val == y?.left?.val &&
-        x?.right?.val == y?.right?.val;
-
-    private void AddNodeToQueue(TreeNode? node)
-    {
-        if (node is not null)
-            _queue.Enqueue(node);
     }
 }

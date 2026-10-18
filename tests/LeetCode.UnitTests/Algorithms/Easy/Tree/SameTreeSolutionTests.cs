@@ -165,4 +165,25 @@ public sealed class SameTreeSolutionTests
         // Assert
         actualSolution.Should().BeTrue();
     }
+
+    [Fact]
+    public void Given_false_result_When_call_IsSameTree_on_the_same_instance_again_with_equal_trees_Then_should_return_true()
+    {
+        // Arrange
+        var alg = new SameTreeSolution();
+
+        var p = new TreeNode(1, new TreeNode(2, left: new TreeNode(5)), new TreeNode(3, left: new TreeNode(7)));
+        var q = new TreeNode(1, new TreeNode(2, left: new TreeNode(6)), new TreeNode(3, left: new TreeNode(99)));
+
+        // Act
+        var firstSolution = alg.IsSameTree(p, q);
+
+        var equalTree1 = new TreeNode(42);
+        var equalTree2 = new TreeNode(42);
+        var secondSolution = alg.IsSameTree(equalTree1, equalTree2);
+
+        // Assert
+        firstSolution.Should().BeFalse();
+        secondSolution.Should().BeTrue();
+    }
 }

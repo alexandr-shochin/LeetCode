@@ -4,29 +4,25 @@
 /// <remarks>https://leetcode.com/problems/sqrtx/</remarks>
 public sealed class SqrtXSolution
 {
-    public int MySqrt(int x)
+    public int MySqrt(int input)
     {
-        if (x is 1)
-            return 1;
-        
-        double leftBorder = 0;
-        double rightBorder = x;
-        
-        var middle = x / 2.0d;
+        var leftBorder = 0;
+        var rightBorder = input;
+
         while (leftBorder <= rightBorder)
         {
-            var doubleMiddle = middle * middle;
-            if (System.Math.Abs(doubleMiddle - x) < 1e-6)
-                return (int)middle;
-            
-            if (doubleMiddle < x)
-                leftBorder = middle;
+            var middle = leftBorder + ((rightBorder - leftBorder) / 2);
+            var square = (long)middle * middle;
+
+            if (square == input)
+                return middle;
+
+            if (square < input)
+                leftBorder = middle + 1;
             else
-                rightBorder = middle;
-            
-            middle = (leftBorder + rightBorder) / 2;
+                rightBorder = middle - 1;
         }
 
-        return (int)middle;
+        return rightBorder;
     }
 }

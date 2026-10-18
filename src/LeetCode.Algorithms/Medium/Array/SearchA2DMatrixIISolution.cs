@@ -6,13 +6,13 @@ public sealed class SearchA2DMatrixIISolution
 {
     public bool SearchMatrix(int[][]? matrix, int target)
     {
-        if (matrix is null)
+        if (matrix is null || matrix.Length is 0)
             return false;
 
         var rowLength = matrix.Length;
         var columnLength = matrix[0].Length;
 
-        if (rowLength is 0 || columnLength is 0)
+        if (columnLength is 0)
             return false;
 
         var columnIndex = columnLength - 1;

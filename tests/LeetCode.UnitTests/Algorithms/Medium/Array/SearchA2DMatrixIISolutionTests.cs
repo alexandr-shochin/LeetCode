@@ -23,9 +23,9 @@ public sealed class SearchA2DMatrixIISolutionTests
         // Act and Assert
         var columnsCount = _matrix[0].Length;
         var rowsCount = _matrix.Length;
-        for (var columnIndex = 0; columnIndex < columnsCount - 1; columnIndex++)
+        for (var columnIndex = 0; columnIndex < columnsCount; columnIndex++)
         {
-            for (var rowIndex = 0; rowIndex < rowsCount - 1; rowIndex++)
+            for (var rowIndex = 0; rowIndex < rowsCount; rowIndex++)
             {
                 var actualSolution = alg.SearchMatrix(_matrix, _matrix[rowIndex][columnIndex]);
                 actualSolution.Should().BeTrue();
@@ -42,6 +42,45 @@ public sealed class SearchA2DMatrixIISolutionTests
         // Act
         var actualSolution = alg.SearchMatrix(_matrix, 25);
         
+        // Assert
+        actualSolution.Should().BeFalse();
+    }
+
+    [Fact]
+    public void Given_null_matrix_When_call_SearchMatrix_Then_should_return_false()
+    {
+        // Arrange
+        var alg = new SearchA2DMatrixIISolution();
+
+        // Act
+        var actualSolution = alg.SearchMatrix(null, 5);
+
+        // Assert
+        actualSolution.Should().BeFalse();
+    }
+
+    [Fact]
+    public void Given_empty_matrix_When_call_SearchMatrix_Then_should_return_false()
+    {
+        // Arrange
+        var alg = new SearchA2DMatrixIISolution();
+
+        // Act
+        var actualSolution = alg.SearchMatrix(System.Array.Empty<int[]>(), 5);
+
+        // Assert
+        actualSolution.Should().BeFalse();
+    }
+
+    [Fact]
+    public void Given_matrix_with_empty_rows_When_call_SearchMatrix_Then_should_return_false()
+    {
+        // Arrange
+        var alg = new SearchA2DMatrixIISolution();
+
+        // Act
+        var actualSolution = alg.SearchMatrix(new[] { System.Array.Empty<int>() }, 5);
+
         // Assert
         actualSolution.Should().BeFalse();
     }

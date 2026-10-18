@@ -6,6 +6,9 @@ public sealed class RemoveDuplicatesFromSortedArraySolution
 {
     public int RemoveDuplicates(int[] nums)
     {
+        if (nums.Length is 0)
+            return 0;
+
         var tmpIndex = 1;
 
         for (var numIndex = 0; numIndex < nums.Length; numIndex++)

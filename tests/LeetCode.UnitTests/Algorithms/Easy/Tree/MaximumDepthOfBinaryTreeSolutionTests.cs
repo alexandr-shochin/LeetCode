@@ -23,4 +23,22 @@ public sealed class MaximumDepthOfBinaryTreeSolutionTests
         // Assert
         actualSolution.Should().Be(4);
     }
+
+    [Fact]
+    public void Given_multiple_calls_on_the_same_instance_When_call_MaxDepth_Then_should_not_leak_state_between_calls()
+    {
+        // Arrange
+        var alg = new MaximumDepthOfBinaryTreeSolution();
+
+        var deepTree = new TreeNode(1, left: new TreeNode(2, left: new TreeNode(3)));
+        var shallowTree = new TreeNode(1, left: new TreeNode(2));
+
+        // Act
+        var firstSolution = alg.MaxDepth(deepTree);
+        var secondSolution = alg.MaxDepth(shallowTree);
+
+        // Assert
+        firstSolution.Should().Be(3);
+        secondSolution.Should().Be(2);
+    }
 }

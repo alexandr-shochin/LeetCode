@@ -6,6 +6,7 @@ public sealed class RemoveDuplicatesFromSortedArraySolutionTests
     [InlineData(new [] { 1, 1, 2 }, 2, new [] { 1, 2 })]
     [InlineData(new [] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }, 5, new [] { 0, 1, 2, 3, 4 })]
     [InlineData(new [] { 1, 1, 2, 2, 3, 3 }, 3, new [] { 1, 2, 3 })]
+    [InlineData(new int[] { }, 0, new int[] { })]
     public void Given_some_set_of_input_parameters_When_call_RemoveDuplicates_Then_should_return_correct_solutions(
         int[] nums, int expectedK, int[] expectedNums)
     {

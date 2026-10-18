@@ -1,58 +1,53 @@
 ﻿namespace LeetCode.Algorithms.Easy.Stack;
 
+/// <summary>394. Decode String</summary>
+/// <remarks>https://leetcode.com/problems/decode-string/</remarks>
 public sealed class Decoder
 {
     public string Decode(string? inputStr)
     {
         if (string.IsNullOrEmpty(inputStr))
             return string.Empty;
-        
-        var stack = new Stack<string>();
-        
-        foreach (var inputSymbol in inputStr)
+
+        var stringStack = new Stack<StringBuilder>();
+        var countStack = new Stack<int>();
+
+        var currentString = new StringBuilder();
+        var repeatCount = 0;
+
+        foreach (var symbol in inputStr)
         {
-            var inputStringSymbol = inputSymbol.ToString();
-            
-            stack.Push(inputStringSymbol);
-
-            if (inputStringSymbol is not "]")
+            if (symbol is >= '0' and <= '9')
+            {
+                repeatCount = repeatCount * 10 + (symbol - '0');
                 continue;
+            }
 
-            var subStr = ExtractSubStr(stack);
-            var multipliedStr = MultiplyStr(subStr);
-            stack.Push(multipliedStr);
+            if (symbol is '[')
+            {
+                stringStack.Push(currentString);
+                countStack.Push(repeatCount);
+
+                currentString = new StringBuilder();
+                repeatCount = 0;
+                continue;
+            }
+
+            if (symbol is ']' && countStack is not { Count: 0 })
+            {
+                var multiplier = countStack.Pop();
+
+                var multipliedString = new StringBuilder(stringStack.Pop().ToString());
+                for (var copyIndex = 0; copyIndex < multiplier; copyIndex++)
+                    multipliedString.Append(currentString);
+
+                currentString = multipliedString;
+                continue;
+            }
+
+            currentString.Append(symbol);
         }
 
-        var result = string.Empty;
-        while (stack is not { Count: 0 })
-            result = string.Concat(stack.Pop(), result);
-        
-        return result;
+        return currentString.ToString();
     }
-
-    private string ExtractSubStr(Stack<string> stack)
-    {
-        var result = string.Empty;
-        
-        while (!IsDigit(stack.Peek()))
-            result = string.Concat(stack.Pop(), result);
-        result = string.Concat(stack.Pop(), result);
-
-        return result;
-    }
-
-    private string MultiplyStr(string inputStr)
-    {
-        var result = string.Empty;
-        
-        var multiplyFactor = int.Parse(inputStr.First().ToString());
-        var endIndexOfInputStr = inputStr.Length - 2;
-        for (var factorIdx = 1; factorIdx <= multiplyFactor; ++factorIdx)
-            for (var inputStrIdx = 2; inputStrIdx <= endIndexOfInputStr; ++inputStrIdx)
-                result = string.Concat(result, inputStr[inputStrIdx]);
-
-        return result;
-    }
-
-    private bool IsDigit(string str) => int.TryParse(str, out _);
 }
