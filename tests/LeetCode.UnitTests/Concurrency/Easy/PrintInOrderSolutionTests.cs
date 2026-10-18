@@ -21,14 +21,16 @@ public sealed class PrintInOrderSolutionTests
             var actualSolution = string.Empty;
             var threads = new[]
             {
-                new Thread(_ => alg.First(() => actualSolution += "first")),
-                new Thread(_ => alg.Second(() => actualSolution += "second")),
-                new Thread(_ => alg.Third(() => actualSolution += "third"))
+                new Thread(_ => alg.First(() => actualSolution += "first")) { IsBackground = true },
+                new Thread(_ => alg.Second(() => actualSolution += "second")) { IsBackground = true },
+                new Thread(_ => alg.Third(() => actualSolution += "third")) { IsBackground = true }
             };
             
             Parallel.ForEach(threads, thread => thread.Start());
-            alg.ThirdManualResetEventSlim.Wait();
-        
+
+            foreach (var thread in threads)
+                thread.Join(TimeSpan.FromSeconds(30)).Should().BeTrue("all threads should finish without deadlock");
+
             actualSolution.Should().Be(ExpectedSolution);
             _testOutputHelper.WriteLine($"experimentNumber: {experimentNumber} OK!");
         }

@@ -5,23 +5,21 @@
 public sealed class PrintFooBarAlternatelySolution
 {
     private readonly int _n;
-    private readonly ManualResetEventSlim _firstManualResetEventSlim = new(false);
-    private readonly ManualResetEventSlim _secondManualResetEventSlim = new(true);
+    private readonly ManualResetEventSlim _firstPrinted = new(false);
+    private readonly ManualResetEventSlim _secondPrinted = new(true);
 
     public PrintFooBarAlternatelySolution(int n) => _n = n;
-
-    public ManualResetEventSlim FinishedManualResetEventSlim { get; } = new(false);
 
     public void Foo(Action printFoo)
     {
         for (var i = 0; i < _n; i++)
         {
-            _secondManualResetEventSlim.Wait();
-            _secondManualResetEventSlim.Reset();
+            _secondPrinted.Wait();
+            _secondPrinted.Reset();
 
             printFoo();
-            
-            _firstManualResetEventSlim.Set();
+
+            _firstPrinted.Set();
         }
     }
 
@@ -29,14 +27,12 @@ public sealed class PrintFooBarAlternatelySolution
     {
         for (var i = 0; i < _n; i++)
         {
-            _firstManualResetEventSlim.Wait();
-            _firstManualResetEventSlim.Reset();
-            
+            _firstPrinted.Wait();
+            _firstPrinted.Reset();
+
             printBar();
-            
-            _secondManualResetEventSlim.Set();
+
+            _secondPrinted.Set();
         }
-        
-        FinishedManualResetEventSlim.Set();
     }
 }

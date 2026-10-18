@@ -4,33 +4,29 @@
 /// <remarks>https://leetcode.com/problems/print-in-order/</remarks>>
 public sealed class PrintInOrderSolution
 {
-    private readonly ManualResetEventSlim _firstManualResetEventSlim = new(false);
-    private readonly ManualResetEventSlim _secondManualResetEventSlim = new(false);
-
-    public ManualResetEventSlim ThirdManualResetEventSlim { get; } = new(false);
+    private readonly ManualResetEventSlim _firstPrinted = new(false);
+    private readonly ManualResetEventSlim _secondPrinted = new(false);
 
     public void First(Action printFirst)
     {
         printFirst();
 
-        _firstManualResetEventSlim.Set();
+        _firstPrinted.Set();
     }
 
     public void Second(Action printSecond)
     {
-        _firstManualResetEventSlim.Wait();
+        _firstPrinted.Wait();
 
         printSecond();
 
-        _secondManualResetEventSlim.Set();
+        _secondPrinted.Set();
     }
 
     public void Third(Action printThird)
     {
-        _secondManualResetEventSlim.Wait();
+        _secondPrinted.Wait();
 
         printThird();
-        
-        ThirdManualResetEventSlim.Set();
     }
 }

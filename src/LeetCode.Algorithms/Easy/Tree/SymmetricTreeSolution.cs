@@ -7,7 +7,7 @@ public sealed class SymmetricTreeSolution
     public bool IsSymmetric(TreeNode? root)
     {
         if (root is null)
-            return false;
+            return true;
         
         if(root.left?.val != root.right?.val)
             return false;

@@ -12,7 +12,7 @@ public sealed class MinimumDepthOfBinaryTreeSolution
         var queue = new Queue<(TreeNode node, int depth)>();
         queue.Enqueue((root, 1));
 
-        while (queue is not { Count: 0 })
+        while (true)
         {
             var (currentNode, depth) = queue.Dequeue();
 
@@ -25,7 +25,5 @@ public sealed class MinimumDepthOfBinaryTreeSolution
             if (currentNode.right is not null)
                 queue.Enqueue((currentNode.right, depth + 1));
         }
-
-        return 0;
     }
 }

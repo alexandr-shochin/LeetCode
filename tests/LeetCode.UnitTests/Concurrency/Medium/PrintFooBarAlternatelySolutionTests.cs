@@ -20,13 +20,15 @@ public sealed class PrintFooBarAlternatelySolutionTests
             var actualSolution = string.Empty;
             var threads = new[]
             {
-                new Thread(_ => alg.Bar(() => actualSolution += "bar")),
-                new Thread(_ => alg.Foo(() => actualSolution += "foo"))
+                new Thread(_ => alg.Bar(() => actualSolution += "bar")) { IsBackground = true },
+                new Thread(_ => alg.Foo(() => actualSolution += "foo")) { IsBackground = true }
             };
             
             Parallel.ForEach(threads, thread => thread.Start());
-            alg.FinishedManualResetEventSlim.Wait();
-            
+
+            foreach (var thread in threads)
+                thread.Join(TimeSpan.FromSeconds(30)).Should().BeTrue("all threads should finish without deadlock");
+
             var expectedSolution = string.Empty;
             for (var i = 1; i <= experimentNumber; i++)
                 expectedSolution += "foobar";

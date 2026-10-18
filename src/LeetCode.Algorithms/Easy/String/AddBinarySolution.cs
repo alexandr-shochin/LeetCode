@@ -9,66 +9,33 @@ public sealed class AddBinarySolution
         if (string.IsNullOrWhiteSpace(a) || string.IsNullOrWhiteSpace(b))
             return null;
 
-        var result = string.Empty;
-        
-        var (sum, inMemory) = ('0', '0');
-        for (int aIndex = a.Length - 1, bIndex = b.Length - 1;
+        var resultLength = System.Math.Max(a.Length, b.Length);
+        var result = new char[resultLength + 1];
+
+        var carry = '0';
+        for (int aIndex = a.Length - 1, bIndex = b.Length - 1, resultIndex = resultLength;
              aIndex >= 0 || bIndex >= 0;
-             aIndex--, bIndex--)
+             aIndex--, bIndex--, resultIndex--)
         {
-            var aValue = GetValue(a, aIndex);
-            var bValue = GetValue(b, bIndex);
+            var (sum, nextCarry) = AddBits(GetValue(a, aIndex), GetValue(b, bIndex), carry);
 
-            (sum, inMemory) = AddBits(aValue, bValue, inMemory);
-            result = string.Concat(sum, result);
+            result[resultIndex] = sum;
+            carry = nextCarry;
         }
-        
-        if(inMemory is not '0')
-            result = string.Concat(inMemory, result);
-        
-        return result;
+
+        if (carry is '0')
+            return new string(result, 1, resultLength);
+
+        result[0] = carry;
+        return new string(result);
     }
+    
+    private static char GetValue(string str, int strIndex) => strIndex >= 0 ? str[strIndex] : '0';
 
-    private char GetValue(string str, int strIndex) =>
-        strIndex < str.Length && strIndex >= 0
-            ? str[strIndex]
-            : '0';
-
-    private (char sum, char inMemory) AddBits(char x, char y, char inMemory)
+    private static (char sum, char carry) AddBits(char x, char y, char carry)
     {
-        if (x is '0' && y is '0')
-        {
-            switch (inMemory)
-            {
-                case '0':
-                    return (sum:'0', inMemory:'0');
-                case '1':
-                    return (sum:'1', inMemory:'0');
-            }
-        }
-        
-        if ((x is '0' && y is '1') || (x is '1' && y is '0'))
-        {
-            switch (inMemory)
-            {
-                case '0':
-                    return (sum:'1', inMemory:'0');
-                case '1':
-                    return (sum:'0', inMemory:'1');
-            }
-        }
-        
-        if (x is '1' && y is '1')
-        {
-            switch (inMemory)
-            {
-                case '0':
-                    return (sum:'0', inMemory:'1');
-                case '1':
-                    return (sum:'1', inMemory:'1');
-            }
-        }
+        var bitsSum = (x - '0') + (y - '0') + (carry - '0');
 
-        return (sum:'0', inMemory:'0');
+        return ((char)('0' + (bitsSum % 2)), (char)('0' + (bitsSum / 2)));
     }
 }

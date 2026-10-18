@@ -3,6 +3,19 @@
 public sealed class InvertBinaryTreeSolutionTests
 {
     [Fact]
+    public void Given_null_root_When_call_InvertTree_Then_should_return_null()
+    {
+        // Arrange
+        var alg = new InvertBinaryTreeSolution();
+
+        // Act
+        var actualSolution = alg.InvertTree(null);
+
+        // Assert
+        actualSolution.Should().BeNull();
+    }
+
+    [Fact]
     public void Given_some_set_of_input_parameters_When_call_InvertTree_Then_should_return_correct_solutions()
     {
         // Arrange

@@ -3,6 +3,19 @@
 public sealed class MaximumDepthOfBinaryTreeSolutionTests
 {
     [Fact]
+    public void Given_null_root_When_call_MaxDepth_Then_should_return_zero()
+    {
+        // Arrange
+        var alg = new MaximumDepthOfBinaryTreeSolution();
+
+        // Act
+        var actualSolution = alg.MaxDepth(null);
+
+        // Assert
+        actualSolution.Should().Be(0);
+    }
+
+    [Fact]
     public void Given_some_set_of_input_parameters_When_call_MaxDepth_Then_should_return_correct_solutions()
     {
         // Arrange

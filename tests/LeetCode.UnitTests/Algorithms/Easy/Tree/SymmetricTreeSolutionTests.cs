@@ -3,6 +3,36 @@
 public sealed class SymmetricTreeSolutionTests
 {
     [Fact]
+    public void Given_null_root_When_call_IsSymmetric_Then_should_return_true()
+    {
+        // Arrange
+        var alg = new SymmetricTreeSolution();
+
+        // Act
+        var actualSolution = alg.IsSymmetric(null);
+
+        // Assert
+        actualSolution.Should().BeTrue();
+    }
+
+    [Fact]
+    public void Given_tree_with_different_root_children_When_call_IsSymmetric_Then_should_return_false()
+    {
+        // Arrange
+        var alg = new SymmetricTreeSolution();
+
+        // Act
+        var root = new TreeNode(
+            1,
+            left: new TreeNode(2),
+            right: new TreeNode(3));
+        var actualSolution = alg.IsSymmetric(root);
+
+        // Assert
+        actualSolution.Should().BeFalse();
+    }
+
+    [Fact]
     public void Given_some_symmetric_tree_v1_When_call_IsSymmetric_Then_should_return_true()
     {
         // Arrange
