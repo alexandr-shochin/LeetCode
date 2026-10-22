@@ -1,28 +1,28 @@
-﻿namespace LeetCode.Algorithms.Easy.String;
+namespace LeetCode.Algorithms.Easy.String;
 
 /// <summary>14. Longest Common Prefix</summary>
-/// <remarks>https://leetcode.com/problems/longest-common-prefix/</remarks>>
+/// <remarks>https://leetcode.com/problems/longest-common-prefix/</remarks>
 public sealed class LongestCommonPrefixSolution
 {
     public string LongestCommonPrefix(string[] strs)
     {
         var stringsLength = strs.Length;
-        
+
         if (stringsLength == 0)
             return string.Empty;
 
         var result = new StringBuilder();
 
         var firstStr = strs.First();
-        
+
         if (stringsLength == 1)
             return firstStr;
-        
+
         var shortestStringLength = strs.Min(str => str.Length);
-        
+
         if (shortestStringLength == 0)
             return result.ToString();
-        
+
         var isEqual = true;
         for (var indexShortestString = 0; indexShortestString < shortestStringLength; indexShortestString++)
         {
@@ -30,7 +30,7 @@ public sealed class LongestCommonPrefixSolution
             {
                 if (strs[indexString][indexShortestString] == strs[indexString + 1][indexShortestString])
                     continue;
-                
+
                 isEqual = false;
                 break;
             }

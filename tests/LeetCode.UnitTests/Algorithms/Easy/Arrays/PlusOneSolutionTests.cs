@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.Arrays;
+namespace LeetCode.UnitTests.Algorithms.Easy.Arrays;
 
 public sealed class PlusOneSolutionTests
 {
@@ -16,6 +16,6 @@ public sealed class PlusOneSolutionTests
         var actualSolution = alg.PlusOne(digits);
 
         // Assert
-        actualSolution.Should().BeEquivalentTo(expectedSolution);
+        actualSolution.Should().Equal(expectedSolution);
     }
 }

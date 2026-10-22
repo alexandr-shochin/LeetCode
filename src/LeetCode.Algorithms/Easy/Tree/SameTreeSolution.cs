@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.Tree;
+namespace LeetCode.Algorithms.Easy.Tree;
 
 /// <summary>100. Same Tree</summary>
 /// <remarks>https://leetcode.com/problems/same-tree/</remarks>

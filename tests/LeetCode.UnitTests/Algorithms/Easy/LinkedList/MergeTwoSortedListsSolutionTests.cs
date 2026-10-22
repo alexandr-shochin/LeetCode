@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.LinkedList;
+namespace LeetCode.UnitTests.Algorithms.Easy.LinkedList;
 
 public sealed class MergeTwoSortedListsSolutionTests
 {
@@ -20,11 +20,11 @@ public sealed class MergeTwoSortedListsSolutionTests
         var actualSolution = alg.MergeTwoLists(firstListNode, secondListNode);
 
         // Assert
-        LinkedListUtils.GetDigits(actualSolution).Should().BeEquivalentTo(expectedSolution);
+        LinkedListUtils.GetDigits(actualSolution).Should().Equal(expectedSolution);
     }
-    
+
     [Fact]
-    public void Given_some_empty_set_of_input_parameters_When_call_AddTwoNumbers_Then_should_return_correct_solutions()
+    public void Given_two_empty_lists_When_call_MergeTwoLists_Then_should_return_empty_list()
     {
         // Arrange
         var alg = new MergeTwoSortedListsSolution();
@@ -35,6 +35,6 @@ public sealed class MergeTwoSortedListsSolutionTests
         var actualSolution = alg.MergeTwoLists(firstListNode, secondListNode);
 
         // Assert
-        LinkedListUtils.GetDigits(actualSolution).Should().BeEquivalentTo(Array.Empty<int>());
+        LinkedListUtils.GetDigits(actualSolution).Should().Equal(Array.Empty<int>());
     }
 }

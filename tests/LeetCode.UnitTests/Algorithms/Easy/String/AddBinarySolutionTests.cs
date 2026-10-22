@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.String;
+namespace LeetCode.UnitTests.Algorithms.Easy.String;
 
 public sealed class AddBinarySolutionTests
 {
@@ -29,15 +29,15 @@ public sealed class AddBinarySolutionTests
     [InlineData("1", "")]
     [InlineData(" ", "1")]
     [InlineData("1", " ")]
-    public void Given_null_or_empty_input_When_call_AddBinary_Then_should_return_null(string? a, string? b)
+    public void Given_null_or_empty_input_When_call_AddBinary_Then_should_throw_ArgumentException(string? a, string? b)
     {
         // Arrange
         var alg = new AddBinarySolution();
 
         // Act
-        var actualSolution = alg.AddBinary(a, b);
+        var act = () => alg.AddBinary(a!, b!);
 
         // Assert
-        actualSolution.Should().BeNull();
+        act.Should().Throw<ArgumentException>();
     }
 }

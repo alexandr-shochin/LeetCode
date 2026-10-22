@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Concurrency.Easy;
+namespace LeetCode.UnitTests.Concurrency.Easy;
 
 public sealed class PrintInOrderSolutionTests
 {
@@ -12,12 +12,12 @@ public sealed class PrintInOrderSolutionTests
         // Arrange
         const int ExperimentCount = 100;
         const string ExpectedSolution = "firstsecondthird";
-        
+
         // Act and Assert
         for (var experimentNumber = 1; experimentNumber <= ExperimentCount; experimentNumber++)
         {
             var alg = new PrintInOrderSolution();
-            
+
             var actualSolution = string.Empty;
             var threads = new[]
             {
@@ -25,7 +25,7 @@ public sealed class PrintInOrderSolutionTests
                 new Thread(_ => alg.Second(() => actualSolution += "second")) { IsBackground = true },
                 new Thread(_ => alg.Third(() => actualSolution += "third")) { IsBackground = true }
             };
-            
+
             Parallel.ForEach(threads, thread => thread.Start());
 
             foreach (var thread in threads)

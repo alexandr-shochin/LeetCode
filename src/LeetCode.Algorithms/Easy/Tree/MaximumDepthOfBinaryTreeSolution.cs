@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.Tree;
+namespace LeetCode.Algorithms.Easy.Tree;
 
 /// <summary>104. Maximum Depth of Binary Tree</summary>
 /// <remarks>https://leetcode.com/problems/maximum-depth-of-binary-tree/</remarks>

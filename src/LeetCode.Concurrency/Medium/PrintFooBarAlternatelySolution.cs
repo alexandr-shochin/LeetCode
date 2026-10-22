@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Concurrency.Medium;
+namespace LeetCode.Concurrency.Medium;
 
 /// <summary>1115. Print FooBar Alternately</summary>
 /// <remarks>https://leetcode.com/problems/print-foobar-alternately/</remarks>

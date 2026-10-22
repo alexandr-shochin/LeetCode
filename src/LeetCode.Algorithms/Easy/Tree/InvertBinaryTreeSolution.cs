@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.Tree;
+namespace LeetCode.Algorithms.Easy.Tree;
 
 /// <summary>226. Invert Binary Tree</summary>
 /// <remarks>https://leetcode.com/problems/invert-binary-tree/</remarks>
@@ -17,11 +17,11 @@ public sealed class InvertBinaryTreeSolution
             var currentNode = queue.Dequeue();
 
             (currentNode.left, currentNode.right) = (currentNode.right, currentNode.left); // swap
-            
-            if(currentNode.right is not null)
+
+            if (currentNode.right is not null)
                 queue.Enqueue(currentNode.right);
-            
-            if(currentNode.left is not null)
+
+            if (currentNode.left is not null)
                 queue.Enqueue(currentNode.left);
         }
 

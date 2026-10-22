@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.Stack;
+namespace LeetCode.Algorithms.Easy.Stack;
 
 /// <summary>20. Valid Parentheses</summary>
 /// <remarks>https://leetcode.com/problems/valid-parentheses/</remarks>
@@ -11,8 +11,8 @@ public sealed class ValidParenthesesSolution
         {
             var isOpeningBracket = IsOpeningBracket(ch);
             var isClosingBracket = IsClosingBracket(ch);
-            
-            if(!(isOpeningBracket || isClosingBracket))
+
+            if (!(isOpeningBracket || isClosingBracket))
                 continue;
 
             if (isOpeningBracket)

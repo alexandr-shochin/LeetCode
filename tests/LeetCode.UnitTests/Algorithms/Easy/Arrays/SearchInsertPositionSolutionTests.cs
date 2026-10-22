@@ -1,6 +1,6 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.Arrays;
+namespace LeetCode.UnitTests.Algorithms.Easy.Arrays;
 
-public sealed class SearchInsertPositionSolutionTest
+public sealed class SearchInsertPositionSolutionTests
 {
     [Theory]
     [InlineData(new[] { 1, 3, 5, 6 }, 5, 2)]

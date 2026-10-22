@@ -1,7 +1,7 @@
-﻿namespace LeetCode.Algorithms.Easy.Tree;
+namespace LeetCode.Algorithms.Easy.Tree;
 
 /// <summary>111. Minimum Depth of Binary Tree</summary>
-/// <remarks>https://leetcode.com/problems/minimum-depth-of-binary-tree/</remarks>>
+/// <remarks>https://leetcode.com/problems/minimum-depth-of-binary-tree/</remarks>
 public sealed class MinimumDepthOfBinaryTreeSolution
 {
     public int MinDepth(TreeNode? root)

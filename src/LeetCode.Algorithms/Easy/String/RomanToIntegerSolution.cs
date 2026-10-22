@@ -1,7 +1,7 @@
-﻿namespace LeetCode.Algorithms.Easy.String;
+namespace LeetCode.Algorithms.Easy.String;
 
 /// <summary>13. Roman to Integer</summary>
-/// <remarks>https://leetcode.com/problems/roman-to-integer/</remarks>>
+/// <remarks>https://leetcode.com/problems/roman-to-integer/</remarks>
 public sealed class RomanToIntegerSolution
 {
     public int RomanToInt(string s)

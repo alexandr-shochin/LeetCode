@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms;
+namespace LeetCode.UnitTests.Algorithms;
 
 public static class LinkedListUtils
 {
@@ -6,11 +6,11 @@ public static class LinkedListUtils
     {
         if (listNodes is null or { Length: 0 })
             return null;
-        
+
         var currentNode = new ListNode(listNodes[listNodes.Length - 1]);
-        for (var i = listNodes.Length - 2; i >= 0 ; i--)
+        for (var i = listNodes.Length - 2; i >= 0; i--)
         {
-            var newNode  = new ListNode(listNodes[i], currentNode);
+            var newNode = new ListNode(listNodes[i], currentNode);
             currentNode = newNode;
         }
 
@@ -19,9 +19,9 @@ public static class LinkedListUtils
 
     public static int[] GetDigits(ListNode? listNode)
     {
-        if(listNode is null)
+        if (listNode is null)
             return Array.Empty<int>();
-        
+
         var digits = new List<int> { listNode.val };
 
         var root = listNode;

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.Stack;
+namespace LeetCode.UnitTests.Algorithms.Easy.Stack;
 
 public sealed class ValidParenthesesSolutionTests
 {

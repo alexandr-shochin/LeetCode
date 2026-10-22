@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.Arrays;
+namespace LeetCode.UnitTests.Algorithms.Easy.Arrays;
 
 public sealed class TwoSumSolutionTests
 {
@@ -18,9 +18,9 @@ public sealed class TwoSumSolutionTests
         var actualSolution = alg.TwoSum(nums, target);
 
         // Assert
-        actualSolution.Should().BeEquivalentTo(expectedSolution);
+        actualSolution.Should().Equal(expectedSolution);
     }
-    
+
     [Fact]
     public void Given_empty_input_nums_array_When_call_TwoSum_Then_should_return_empty_solution()
     {
@@ -34,9 +34,9 @@ public sealed class TwoSumSolutionTests
         var actualSolution = alg.TwoSum(nums, target);
 
         // Assert
-        actualSolution.Should().BeEquivalentTo(expectedSolution);
+        actualSolution.Should().Equal(expectedSolution);
     }
-    
+
     [Fact]
     public void Given_some_set_of_input_parameters_When_call_TwoSum_with_target_that_does_not_exist_Then_should_return_empty_solution()
     {
@@ -50,6 +50,6 @@ public sealed class TwoSumSolutionTests
         var actualSolution = alg.TwoSum(nums, target);
 
         // Assert
-        actualSolution.Should().BeEquivalentTo(expectedSolution);
+        actualSolution.Should().Equal(expectedSolution);
     }
 }

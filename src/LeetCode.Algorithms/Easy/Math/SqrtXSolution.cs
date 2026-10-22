@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.Math;
+namespace LeetCode.Algorithms.Easy.Math;
 
 /// <summary>69. Sqrt(x)</summary>
 /// <remarks>https://leetcode.com/problems/sqrtx/</remarks>

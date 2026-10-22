@@ -1,7 +1,7 @@
-﻿namespace LeetCode.Algorithms.Easy.String;
+namespace LeetCode.Algorithms.Easy.String;
 
 /// <summary>125. Valid Palindrome</summary>
-/// <remarks>https://leetcode.com/problems/valid-palindrome/</remarks>>
+/// <remarks>https://leetcode.com/problems/valid-palindrome/</remarks>
 public sealed class ValidPalindromeSolution
 {
     public bool IsPalindrome(string s)
@@ -15,14 +15,14 @@ public sealed class ValidPalindromeSolution
             var ch = s[charIndex];
             if (!IsAlphanumeric(ch))
                 continue;
-            
+
             chars[targetCharsIndex++] = char.ToLower(ch);
             isNotEmpty = true;
         }
 
         if (!isNotEmpty)
             return true;
-        
+
         for (var charIndex = 0; charIndex < targetCharsIndex - 1; charIndex++)
             if (chars[charIndex] != chars[targetCharsIndex - 1 - charIndex])
                 return false;

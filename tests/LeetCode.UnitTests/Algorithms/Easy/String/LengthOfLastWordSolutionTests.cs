@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.String;
+namespace LeetCode.UnitTests.Algorithms.Easy.String;
 
 public sealed class LengthOfLastWordSolutionTests
 {

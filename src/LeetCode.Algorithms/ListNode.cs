@@ -1,6 +1,6 @@
-﻿namespace LeetCode.Algorithms;
+namespace LeetCode.Algorithms;
 
-public sealed class ListNode 
+public sealed class ListNode
 {
     public int val;
     public ListNode? next;

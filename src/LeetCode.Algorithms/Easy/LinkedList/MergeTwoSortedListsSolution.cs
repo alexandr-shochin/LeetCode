@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.LinkedList;
+namespace LeetCode.Algorithms.Easy.LinkedList;
 
 /// <summary>21. Merge Two Sorted Lists</summary>
 /// <remarks>https://leetcode.com/problems/merge-two-sorted-lists/</remarks>
@@ -6,30 +6,27 @@ public sealed class MergeTwoSortedListsSolution
 {
     public ListNode? MergeTwoLists(ListNode? list1, ListNode? list2)
     {
-        var resultHead = new ListNode();
+        var resultRoot = new ListNode();
+        var resultTail = resultRoot;
 
-        ListNode? tmpListNode;
-        for (tmpListNode = resultHead;
-             list1 is not null && list2 is not null;
-             tmpListNode = tmpListNode.next)
+        while (list1 is not null && list2 is not null)
         {
             if (list1.val <= list2.val)
             {
-                tmpListNode.next = new ListNode(list1.val);
+                resultTail.next = list1;
                 list1 = list1.next;
             }
             else
             {
-                tmpListNode.next = new ListNode(list2.val);
+                resultTail.next = list2;
                 list2 = list2.next;
             }
+
+            resultTail = resultTail.next;
         }
 
-        for (var residualList = list1 ?? list2;
-             residualList is not null;
-             residualList = residualList.next, tmpListNode = tmpListNode.next)
-            tmpListNode.next = new ListNode(residualList.val);
+        resultTail.next = list1 ?? list2;
 
-        return resultHead.next;
+        return resultRoot.next;
     }
 }

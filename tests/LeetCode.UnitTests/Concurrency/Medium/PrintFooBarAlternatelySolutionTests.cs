@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Concurrency.Medium;
+namespace LeetCode.UnitTests.Concurrency.Medium;
 
 public sealed class PrintFooBarAlternatelySolutionTests
 {
@@ -11,19 +11,19 @@ public sealed class PrintFooBarAlternatelySolutionTests
     {
         // Arrange
         const int ExperimentCount = 100;
-        
+
         // Act and Assert
         for (var experimentNumber = 1; experimentNumber <= ExperimentCount; experimentNumber++)
         {
             var alg = new PrintFooBarAlternatelySolution(experimentNumber);
-            
+
             var actualSolution = string.Empty;
             var threads = new[]
             {
                 new Thread(_ => alg.Bar(() => actualSolution += "bar")) { IsBackground = true },
                 new Thread(_ => alg.Foo(() => actualSolution += "foo")) { IsBackground = true }
             };
-            
+
             Parallel.ForEach(threads, thread => thread.Start());
 
             foreach (var thread in threads)
@@ -32,7 +32,7 @@ public sealed class PrintFooBarAlternatelySolutionTests
             var expectedSolution = string.Empty;
             for (var i = 1; i <= experimentNumber; i++)
                 expectedSolution += "foobar";
-            
+
             actualSolution.Should().Be(expectedSolution);
             _testOutputHelper.WriteLine($"experimentNumber: {experimentNumber} OK!");
         }

@@ -1,7 +1,7 @@
-﻿namespace LeetCode.Concurrency.Easy;
+namespace LeetCode.Concurrency.Easy;
 
 /// <summary>1114. Print in Order</summary>
-/// <remarks>https://leetcode.com/problems/print-in-order/</remarks>>
+/// <remarks>https://leetcode.com/problems/print-in-order/</remarks>
 public sealed class PrintInOrderSolution
 {
     private readonly ManualResetEventSlim _firstPrinted = new(false);

@@ -1,13 +1,13 @@
-﻿namespace LeetCode.Algorithms.Easy.String;
+namespace LeetCode.Algorithms.Easy.String;
 
 /// <summary>67. Add Binary</summary>
 /// <remarks>https://leetcode.com/problems/add-binary/</remarks>
 public sealed class AddBinarySolution
 {
-    public string? AddBinary(string? a, string? b)
+    public string AddBinary(string a, string b)
     {
-        if (string.IsNullOrWhiteSpace(a) || string.IsNullOrWhiteSpace(b))
-            return null;
+        ArgumentException.ThrowIfNullOrWhiteSpace(a);
+        ArgumentException.ThrowIfNullOrWhiteSpace(b);
 
         var resultLength = System.Math.Max(a.Length, b.Length);
         var result = new char[resultLength + 1];
@@ -29,7 +29,7 @@ public sealed class AddBinarySolution
         result[0] = carry;
         return new string(result);
     }
-    
+
     private static char GetValue(string str, int strIndex) => strIndex >= 0 ? str[strIndex] : '0';
 
     private static (char sum, char carry) AddBits(char x, char y, char carry)

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.LinkedList;
+namespace LeetCode.Algorithms.Easy.LinkedList;
 
 /// <summary>83. Remove Duplicates from Sorted List</summary>
 /// <remarks>https://leetcode.com/problems/remove-duplicates-from-sorted-list</remarks>
@@ -8,10 +8,10 @@ public sealed class RemoveDuplicatesFromSortedListSolution
     {
         if (head is null)
             return null;
-        
-        if(head.next is null)
+
+        if (head.next is null)
             return head;
-        
+
         var resultRootNode = new ListNode(head.val);
 
         var tmpNode = resultRootNode;

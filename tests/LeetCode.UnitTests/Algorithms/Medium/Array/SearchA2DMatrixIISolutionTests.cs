@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Medium.Array;
+namespace LeetCode.UnitTests.Algorithms.Medium.Array;
 
 public sealed class SearchA2DMatrixIISolutionTests
 {
@@ -13,7 +13,7 @@ public sealed class SearchA2DMatrixIISolutionTests
         _matrix[3] = new[] { 10, 13, 14, 17, 24 };
         _matrix[4] = new[] { 18, 21, 23, 26, 30 };
     }
-    
+
     [Fact]
     public void Given_some_correct_matrix_When_call_SearchMatrix_with_target_that_exists_Then_should_return_true()
     {
@@ -32,16 +32,16 @@ public sealed class SearchA2DMatrixIISolutionTests
             }
         }
     }
-    
+
     [Fact]
     public void Given_some_correct_matrix_When_call_SearchMatrix_with_target_that_does_not_exists_Then_should_return_false()
     {
         // Arrange
         var alg = new SearchA2DMatrixIISolution();
-        
+
         // Act
         var actualSolution = alg.SearchMatrix(_matrix, 25);
-        
+
         // Assert
         actualSolution.Should().BeFalse();
     }

@@ -13,8 +13,4 @@
     <ProjectReference Include="..\..\src\LeetCode.Concurrency\LeetCode.Concurrency.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Algorithms\Hard" />
-  </ItemGroup>
-
 </Project>

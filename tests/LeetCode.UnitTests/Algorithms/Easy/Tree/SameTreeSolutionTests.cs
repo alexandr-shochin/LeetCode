@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.Tree;
+namespace LeetCode.UnitTests.Algorithms.Easy.Tree;
 
 public sealed class SameTreeSolutionTests
 {
@@ -30,7 +30,7 @@ public sealed class SameTreeSolutionTests
         // Assert
         actualSolution.Should().BeTrue();
     }
-    
+
     [Fact]
     public void Given_example_two_with_some_non_equivalent_trees_When_call_IsSameTree_Then_should_return_false()
     {
@@ -59,7 +59,7 @@ public sealed class SameTreeSolutionTests
         // Assert
         actualSolution.Should().BeFalse();
     }
-    
+
     [Fact]
     public void Given_example_three_with_some_non_equivalent_trees_When_call_IsSameTree_Then_should_return_false()
     {
@@ -78,7 +78,7 @@ public sealed class SameTreeSolutionTests
         // Assert
         actualSolution.Should().BeFalse();
     }
-    
+
     [Fact]
     public void Given_example_four_with_some_non_equivalent_trees_When_call_IsSameTree_Then_should_return_false()
     {
@@ -99,7 +99,7 @@ public sealed class SameTreeSolutionTests
         // Assert
         actualSolution.Should().BeFalse();
     }
-    
+
     [Fact]
     public void Given_example_five_with_some_non_equivalent_trees_When_call_IsSameTree_Then_should_return_false()
     {
@@ -120,7 +120,7 @@ public sealed class SameTreeSolutionTests
         // Assert
         actualSolution.Should().BeFalse();
     }
-    
+
     [Fact]
     public void Given_example_six_with_some_non_equivalent_trees_When_call_IsSameTree_Then_should_return_false()
     {
@@ -135,7 +135,7 @@ public sealed class SameTreeSolutionTests
         // Assert
         actualSolution.Should().BeFalse();
     }
-    
+
     [Fact]
     public void Given_example_seven_with_some_non_equivalent_trees_When_call_IsSameTree_Then_should_return_false()
     {
@@ -150,7 +150,7 @@ public sealed class SameTreeSolutionTests
         // Assert
         actualSolution.Should().BeFalse();
     }
-    
+
     [Fact]
     public void Given_example_eight_with_null_trees_When_call_IsSameTree_Then_should_return_true()
     {

@@ -1,17 +1,32 @@
 name: unit tests workflow
 
 on:
-  workflow_run:
-    workflows: [ build workflow ]
-    types:
-      - completed
+  push:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**.cs'
+      - '**.csproj'
+      - '**.props'
+      - '**.targets'
+      - '**.sln'
+      - '**.json'
+      - '.github/workflows/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 env:
-  DOTNET_VERSION: '8.0.112'
+  DOTNET_VERSION: '9.0.100'
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
 
 jobs:
   unit-tests:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     name: unit-tests-${{matrix.os}}
     runs-on: ${{ matrix.os }}
@@ -21,18 +36,27 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.workflow_run.head_sha }}
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: ${{ runner.os }}-nuget-
+
       - name: Install dependencies
-        run: dotnet restore
+        run: dotnet restore --locked-mode
+
+      - name: Check code formatting
+        if: matrix.os == 'ubuntu-latest'
+        run: dotnet format --verify-no-changes --no-restore
 
       - name: Test
-        run: dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+        run: dotnet test --no-restore --configuration Release --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
 
       - name: Add coverage summary
         if: matrix.os == 'ubuntu-latest'
@@ -40,7 +64,7 @@ jobs:
         run: |
           dotnet tool install -g dotnet-reportgenerator-globaltool
           export PATH="$PATH:$HOME/.dotnet/tools"
-          reportgenerator '-reports:./coverage/**/coverage.cobertura.xml' -targetdir:./coverage/report -reporttypes:"MarkdownSummaryGithub;TextSummary"
+          reportgenerator '-reports:./coverage/**/coverage.cobertura.xml' -targetdir:./coverage/report -reporttypes:"MarkdownSummaryGithub;TextSummary" '-minimumCoverageThresholds:LineCoverage:95;BranchCoverage:90'
           cat ./coverage/report/SummaryGithub.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload coverage report

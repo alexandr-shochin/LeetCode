@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.Arrays;
+namespace LeetCode.Algorithms.Easy.Arrays;
 
 /// <summary>26. Remove Duplicates from Sorted Array</summary>
 /// <remarks>https://leetcode.com/problems/remove-duplicates-from-sorted-array/</remarks>
@@ -9,17 +9,17 @@ public sealed class RemoveDuplicatesFromSortedArraySolution
         if (nums.Length is 0)
             return 0;
 
-        var tmpIndex = 1;
+        var uniqueCount = 1;
 
-        for (var numIndex = 0; numIndex < nums.Length; numIndex++)
+        for (var numIndex = 1; numIndex < nums.Length; numIndex++)
         {
-            if (nums[numIndex] == nums[tmpIndex - 1])
+            if (nums[numIndex] == nums[uniqueCount - 1])
                 continue;
 
-            nums[tmpIndex] = nums[numIndex];
-            tmpIndex++;
+            nums[uniqueCount] = nums[numIndex];
+            uniqueCount++;
         }
 
-        return tmpIndex;
+        return uniqueCount;
     }
 }

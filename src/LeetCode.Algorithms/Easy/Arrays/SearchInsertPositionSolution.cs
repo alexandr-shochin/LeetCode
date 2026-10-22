@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Algorithms.Easy.Arrays;
+namespace LeetCode.Algorithms.Easy.Arrays;
 
 /// <summary>35. Search Insert Position</summary>
 /// <remarks>https://leetcode.com/problems/search-insert-position/</remarks>
@@ -8,11 +8,11 @@ public sealed class SearchInsertPositionSolution
     {
         var left = 0;
         var right = nums.Length - 1;
-        
+
         while (left <= right)
         {
             var middle = (left + right) / 2;
-            
+
             if (target == nums[middle])
                 return middle;
 

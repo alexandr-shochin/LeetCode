@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.Math;
+namespace LeetCode.UnitTests.Algorithms.Easy.Math;
 
 public sealed class SqrtXSolutionTests
 {

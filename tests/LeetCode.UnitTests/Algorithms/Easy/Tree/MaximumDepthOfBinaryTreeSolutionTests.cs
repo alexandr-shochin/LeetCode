@@ -1,4 +1,4 @@
-﻿namespace LeetCode.UnitTests.Algorithms.Easy.Tree;
+namespace LeetCode.UnitTests.Algorithms.Easy.Tree;
 
 public sealed class MaximumDepthOfBinaryTreeSolutionTests
 {
