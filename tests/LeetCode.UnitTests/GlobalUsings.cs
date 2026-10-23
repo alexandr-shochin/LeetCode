@@ -1,4 +1,4 @@
-global using FluentAssertions;
+global using AwesomeAssertions;
 global using LeetCode.Algorithms;
 global using LeetCode.Algorithms.Easy.Arrays;
 global using LeetCode.Algorithms.Easy.LinkedList;
